@@ -1,29 +1,34 @@
 {
-  "name": "raspberrypi-node-camera-web-streamer",
-  "version": "1.1.2",
-  "description": "HTTP video streamer for raspberrypi.",
+  "name": "rpi_camera_livestream",
+  "version": "1.0.0",
+  "description": "Using NodeJS and Raspberry Pi camera module to provide a livestream for your website.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"No test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/caseymcj/raspberrypi_node_camera_web_streamer"
+    "url": "git+https://github.com/RootDev4/rpi_camera_livestream.git"
   },
   "keywords": [
-    "raspberry",
-    "pi",
-    "node",
     "camera",
     "html",
+    "javascript",
+    "livestream",
+    "nodejs",
+    "pi",
+    "raspberry",
     "web",
-    "stream",
-    "live"
+    "webcam"
   ],
-  "author": "Casey Johnson",
+  "author": "RootDev4",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RootDev4/rpi_camera_livestream/issues"
+  },
+  "homepage": "https://github.com/RootDev4/rpi_camera_livestream#readme",
   "dependencies": {
-    "express": "^4.17.1",
-    "raspberry-pi-camera-native": "0.0.0"
+    "express": "^4.18.1",
+    "@zebrajaeger/raspberry-pi-camera-native": "^0.0.1"
   }
 }

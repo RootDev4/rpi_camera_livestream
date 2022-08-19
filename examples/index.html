@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Raspberry Pi camera livestream</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        .flip-horizontally {
+            transform: scaleX(-1)
+        }
+        .flip-vertically {
+            transform: scaleY(-1)
+        }
+        .flip-both {
+            transform: scale(-1, -1)
+        }
+    </style>
+</head>
+<body>
+    <img class="flip-both" src="http://127.0.0.1:8000/live.stream" width="800">
+</body>
+</html>
