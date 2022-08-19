@@ -89,7 +89,7 @@ livestream.getSnapshot()
 ### Get supported encoding types
 Returns a comma-separated string list containing the supported encoding types.
 ```javascript
-livestream.getSupportedEncodingList()
+livestream.getSupportedEncodingTypes()
 ```
 ## Documentation
 ### Verbose mode
@@ -153,6 +153,6 @@ Valid encoding types are: JPEG, GIF, PNG, PPM, TGA, BMP
 ### Set quality
 Default: 25
 ```javascript
-livestream.setEncoding(15) // min: 1, max: 100
+livestream.setQuality(15) // min: 1, max: 100
 ```
 Lower values lead to a faster stream.
