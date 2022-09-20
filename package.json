@@ -1,6 +1,6 @@
 {
   "name": "rpi_camera_livestream",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Using NodeJS and Raspberry Pi camera module to provide a livestream for your website.",
   "main": "index.js",
   "scripts": {
