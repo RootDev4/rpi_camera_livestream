@@ -1,8 +1,6 @@
 # Raspberry Pi Camera Livestream
 Using NodeJS and Raspberry Pi camera module to provide a livestream for your website.
-Inspired by caseymcj's [raspberrypi_node_camera_web_streamer](https://github.com/caseymcj/raspberrypi_node_camera_web_streamer).
-
-## Compatibility Notice
+Forked and improved version of caseymcj's [raspberrypi_node_camera_web_streamer](https://github.com/caseymcj/raspberrypi_node_camera_web_streamer).
 This project is up-to-date and works with the latest Raspberry Pi OS 11 (Bullseye).
 
 ## Installation
@@ -156,3 +154,9 @@ Default: 25
 livestream.setQuality(15) // min: 1, max: 100
 ```
 Lower values lead to a faster stream.
+
+## To-Do
+- Add SSL support
+
+## License
+[MIT](../blob/master/LICENSE)
