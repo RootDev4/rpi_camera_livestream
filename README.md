@@ -91,6 +91,7 @@ livestream.getSupportedEncodingTypes()
 ```
 ## Socket.io support
 ### Server
+First install Socket.io with `npm i socket.io`
 ```javascript
 const livestream = require('rpi_camera_livestream')
 livestream.start()
@@ -113,7 +114,7 @@ http.listen(port, () => console.log(`Server is up and listen on port ${port}`))
 ```html
 <img id="webstream" width="800" height="600">
 
-<script src="/socket.io/socket.io.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/socket.io@4.5.3/client-dist/socket.io.min.js"></script>
 <script>
     const socket = io()
     const image = document.getElementById('webstream')
