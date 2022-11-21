@@ -102,7 +102,7 @@ const io = require('socket.io')(http)
 
 io.on('connection', socket => {
     console.log('User connected to socket')
-    setInterval(() => socket.emit('stream', livestream.lastFrame), 1000 / livestream.config.fps)
+    livestream.camera.on('frame', data => socket.emit('stream', data))
 })
 
 // Start HTTP server
@@ -116,12 +116,17 @@ http.listen(port, () => console.log(`Server is up and listen on port ${port}`))
 
 <script src="https://cdn.jsdelivr.net/npm/socket.io@4.5.3/client-dist/socket.io.min.js"></script>
 <script>
+    const bufferToBase64 = buffer => {
+        const bytes = new Uint8Array(buffer)
+        let binary = ''
+        for (let i = 0; i < bytes.byteLength; i++) binary += String.fromCharCode(bytes[i])
+        return `data:image/png;base64,${window.btoa(binary)}`
+    }
+
     const socket = io()
     const image = document.getElementById('webstream')
 
-    socket.on('stream', data => {
-        image.src = btoa(String.fromCharCode(...new Uint8Array(data)))
-    })
+    socket.on('stream', data => image.src = bufferToBase64(data))
 </script>
 ```
 ## Documentation
