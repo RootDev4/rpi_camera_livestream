@@ -89,6 +89,40 @@ Returns a comma-separated string list containing the supported encoding types.
 ```javascript
 livestream.getSupportedEncodingTypes()
 ```
+## Socket.io support
+### Server
+```javascript
+const livestream = require('rpi_camera_livestream')
+livestream.start()
+
+// Web socket
+const http = require('http').Server(livestream.server.app)
+const io = require('socket.io')(http)
+
+io.on('connection', socket => {
+    console.log('User connected to socket')
+    setInterval(() => socket.emit('stream', livestream.lastFrame), 1000 / livestream.config.fps)
+})
+
+// Start HTTP server
+// IMPORTANT: use http.listen() and NOT app.listen()
+const port = livestream.server.port
+http.listen(port, () => console.log(`Server is up and listen on port ${port}`))
+```
+### Client
+```html
+<img id="webstream" width="800" height="600">
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    const socket = io()
+    const image = document.getElementById('webstream')
+
+    socket.on('stream', data => {
+        image.src = btoa(String.fromCharCode(...new Uint8Array(data)))
+    })
+</script>
+```
 ## Documentation
 ### Verbose mode
 Enable/Disable verbose mode. Default: disabled
